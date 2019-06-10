@@ -8,10 +8,70 @@
         <label for="fullName">Full Name</label>
         <input id="fullName" name="fullName" [(ngModel)]="fullName" type="text" class="form-control">
       </div>
+
       <div class="form-group">
         <label for="email">Email</label>
         <input id="email" name="email" [(ngModel)]="email" type="text" class="form-control">
       </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+          <label for="email">Contact Preference</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" name="contactPreference" [(ngModel)]="contactPreference" value="email">
+                Email
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="contactPreference" [(ngModel)]="contactPreference" value="phone">
+                Phone
+            </label>
+          </div>          
+      </div>
+
+      <div class="form-group">
+          <label for="email">Gender</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" name="gender" [(ngModel)]="gender" value="male">
+              Male
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="gender" [(ngModel)]="gender" value="female">
+                Female
+            </label>
+          </div>          
+      </div>
+      
+      <div class="form-group">
+        <div class="form-control">
+          <label class="checkbox-inline">
+            <input type="checkbox" name="isActive" [(ngModel)]="isActive">Is Active
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label for="department">
+            Department
+          </label>
+          <select type="department" name="department" [(ngModel)]="department" class="form-control">
+            <option *ngFor="let dept of departments" [value]="dept.id">
+              {{dept.name}}
+            </option>
+          </select>
+      </div>
+
+      <div class="form-group">
+          <label for="dateOfBirth">Date of Birth</label>
+            <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth" type="text" bsDatepicker class="form-control">  
+            <!-- bsDaterangepicker -->
+      </div>
+      
     </div>
     <div class="panel-footer">
       <button type="submit" class="btn btn-primary">Save</button>
