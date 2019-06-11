@@ -32,11 +32,25 @@ Bir servis modül seviyesinde kaydedilmişse, bu servis uygulamadaki tüm bileş
 
 Bir bileşeni bir hizmette kullanmak için onu bileşen sınıfı yapıcısına enjekte edin.
 
-##INPUT
+## INPUT
 
 'INPUT' özelliği oluşturmak için özelliği '@Input' dekoratörüyle dekore edin.
 'INPUT' özellikleri, genellikle üst öğeden alt öğeye veri iletmek için kullanılır.
 
-##YAPILAN
+## YAPILAN
 nextEmployee() metodu yazıldı
 ngOnChanges özelliği eklendi (display-employee.component.ts)
+
+## Angular property setter vs ngOnChanges
+Bir girdi özellik değeri değiştiğinde tespit etmek ve tepki vermek
+  - ngOnChanges Yaşam Döngüsü Kancası
+  - Mülkiyet Belirleyici
+
+ngOnChanges
+  - yalnızca tek bir mülkle ilgili değişiklikler yerine tüm değişiklikleri alırız
+  - Birden fazla özellik değiştiğinde yararlı
+
+Mülkiyet Belirleyici
+  - Mülkiyet belirleyicisi, belirli bir mülke özgüdür, bu yüzden o mülkün özelliklerinde bir değişiklik yapmayız.
+  - Tek bir mülkü takip etmek istediğinizde kullanışlıdır
+
