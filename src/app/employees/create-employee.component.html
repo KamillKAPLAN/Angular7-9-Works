@@ -12,20 +12,25 @@
         </span>
       </div>
 
-      <div class="form-group" [class.has-error]="email.invalid && email.touched">
+      <div class="form-group" [class.has-error]="email.invalid">
         <label for="email" class="control-label">Email</label>
-        <input id="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email" [(ngModel)]="employee.email" type="text" class="form-control" #email="ngModel">
-        <span class="help-block" *ngIf="email.errors?.required && email.touched">
+        <input id="email" [required]="contactPreference.value=='email'" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="email" 
+              [(ngModel)]="employee.email" type="text" class="form-control" #email="ngModel">
+        <span class="help-block" *ngIf="email.errors?.required">
           Email is required
         </span>
-        <span class="help-block" *ngIf="email.errors?.pattern && email.touched">
+        <span class="help-block" *ngIf="email.errors?.pattern">
             Email is invalid
         </span>
       </div>
 
-      <div class="form-group">
-        <label for="phoneNumber">Phone Number</label>
-        <input id="phoneNumber" name="phoneNumber" [(ngModel)]="employee.phoneNumber" type="text" class="form-control">
+      <div class="form-group" [class.has-error]="phoneNumber.invalid">
+        <label for="phoneNumber" class="control-label">Phone Number</label>
+        <input id="phoneNumber" name="phoneNumber" [required]="contactPreference.value=='phone'" #phoneNumber="ngModel" 
+              [(ngModel)] ="employee.phoneNumber" type="text" class="form-control">
+        <span class="help-block" *ngIf="phoneNumber.errors?.required">
+          Phone Number is required
+        </span>
       </div>
 
       <div class="form-group" [class.has-error]="contactPreference.touched && contactPreference.invalid">
@@ -62,23 +67,31 @@
           </span>          
       </div>
       
-      <div class="form-group">
+      <div class="form-group" [class.has-error]="isActive.touched && isActive.invalid">
         <div class="form-control">
-          <label class="checkbox-inline">
-            <input type="checkbox" name="isActive" [(ngModel)]="employee.isActive">Is Active
+          <label class="checkbox-inline control-label">
+            <input type="checkbox" name="isActive" [required]="employee.isActive==null" #isActive="ngModel" [(ngModel)]="employee.isActive">Is Active
           </label>
         </div>
+        <span class="help-block" *ngIf="isActive.touched && isActive.errors?.required">
+          Is Active is valid
+        </span>
       </div>
 
-      <div class="form-group">
-          <label for="department">
+      <div class="form-group" [class.has-error]="department.touched && department.invalid">
+          <label for="department" class="control-label">
             Department
           </label>
-          <select type="department" name="department" [(ngModel)]="employee.department" class="form-control">
+          <select id="department" appSelectValidator="select" name="department" [(ngModel)]="employee.department" #department="ngModel" class="form-control">
+            <option value="select">Select Department</option>
             <option *ngFor="let dept of departments" [value]="dept.id">
               {{dept.name}}
             </option>
           </select>
+          <span class="help-block" *ngIf="department.touched && 
+                department.errors?.defaultSelected">
+            Department is valid
+          </span>
       </div>
 
       <div class="row">
@@ -102,6 +115,35 @@
 
       <div class="form-group">
         <img [src]="employee.photoPath" height="200" width="200" *ngIf="previewPhoto">
+      </div>
+
+      <div ngModelGroup="passwordGroup" appConfirmEqualValidator #passwordGroup="ngModelGroup"
+          [class.has-error]="passwordGroup.errors?.notEqual && 
+                             !confirmPassword.errors?.required">
+
+        <div class="form-group" [class.has-error]="password.touched && password.invalid">
+          <label for="password" class="control-label">Password</label>
+          <input name="password" required type="text" class="form-control" 
+                [(ngModel)]  ="employee.password" #password="ngModel">
+          <span class="help-block" *ngIf="password.touched && password.errors?.required">
+            Password is required
+          </span>
+        </div>
+
+        <div class="form-group" 
+            [class.has-error]="confirmPassword.touched &&confirmPassword.invalid">
+        <label for="confirmPassword" class="control-label">Confirm Password</label>
+        <input name="confirmPassword" required type="text" class="form-control" [(ngModel)]="employee.confirmPassword" #confirmPassword="ngModel">
+        <span class="help-block" 
+            *ngIf="confirmPassword.touched && confirmPassword.errors?.required">
+            Confirm Password is required
+        </span>
+        <span class="help-block" 
+            *ngIf="confirmPassword.touched && passwordGroup.errors?.notEqual && !confirmPassword.errors?.required">
+            Password and Confirm Password does not match
+        </span>
+        </div>
+
       </div>
 
     </div>
