@@ -24,7 +24,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## ANGULAR SERVİCE
 
-
 Bir servisin enjekte edilmiş bir bağımlılığı olup olmadığına bakılmaksızın, tutarlılık ve geleceğin kanıtı için açısal servis sınıfını @Injectable() dekoratörüyle her zaman dekore etmemek
 
 Bir servisin bileşen seviyesinde kayıtlı olması durumunda servis yalnızca o bileşen için ve onun çocukları tarafından kullanılabilir.
@@ -32,4 +31,10 @@ Bir servisin bileşen seviyesinde kayıtlı olması durumunda servis yalnızca o
 Bir servis modül seviyesinde kaydedilmişse, bu servis uygulamadaki tüm bileşenler için kullanılabilir durumdadır.
 
 Bir bileşeni bir hizmette kullanmak için onu bileşen sınıfı yapıcısına enjekte edin.
+
+##INPUT
+
+'INPUT' özelliği oluşturmak için özelliği '@Input' dekoratörüyle dekore edin.
+
+'INPUT' özellikleri, genellikle üst öğeden alt öğeye veri iletmek için kullanılır.
 

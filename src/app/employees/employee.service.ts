@@ -33,7 +33,7 @@ export class EmployeeService {
           contactPreference : 'Phone',
           phoneNumber : 5432978640,
           dateOfBirth : new Date('3/25/1976'),
-          department : '5',
+          department : '1',
           isActive :true,
           photoPath : 'assets/images/img3.png'
         },
@@ -44,7 +44,7 @@ export class EmployeeService {
           contactPreference : 'Eamil',
           email : 'kamilkaplnn@gmail.com',
           dateOfBirth : new Date('3/5/1994'),
-          department : 'B1',
+          department : '5',
           isActive :true,
           photoPath : 'assets/images/img4.png'
         }
