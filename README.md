@@ -22,6 +22,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## ANGULAR SERVİCE
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Bir servisin enjekte edilmiş bir bağımlılığı olup olmadığına bakılmaksızın, tutarlılık ve geleceğin kanıtı için açısal servis sınıfını X dekoratörüyle her zaman dekore etmemek
+
+Bir servisin bileşen seviyesinde kayıtlı olması durumunda servis yalnızca o bileşen için ve onun çocukları tarafından kullanılabilir.
+
+Bir servis modül seviyesinde kaydedilmişse, bu servis uygulamadaki tüm bileşenler için kullanılabilir durumdadır.
+
+Bir bileşeni bir hizmette kullanmak için onu bileşen sınıfı yapıcısına enjekte edin.
+
