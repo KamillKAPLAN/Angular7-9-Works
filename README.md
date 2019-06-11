@@ -25,7 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## ANGULAR SERVİCE
 
 
-Bir servisin enjekte edilmiş bir bağımlılığı olup olmadığına bakılmaksızın, tutarlılık ve geleceğin kanıtı için açısal servis sınıfını X dekoratörüyle her zaman dekore etmemek
+Bir servisin enjekte edilmiş bir bağımlılığı olup olmadığına bakılmaksızın, tutarlılık ve geleceğin kanıtı için açısal servis sınıfını @Injectable() dekoratörüyle her zaman dekore etmemek
 
 Bir servisin bileşen seviyesinde kayıtlı olması durumunda servis yalnızca o bileşen için ve onun çocukları tarafından kullanılabilir.
 
