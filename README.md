@@ -35,6 +35,8 @@ Bir bileşeni bir hizmette kullanmak için onu bileşen sınıfı yapıcısına 
 ##INPUT
 
 'INPUT' özelliği oluşturmak için özelliği '@Input' dekoratörüyle dekore edin.
-
 'INPUT' özellikleri, genellikle üst öğeden alt öğeye veri iletmek için kullanılır.
 
+##YAPILAN
+nextEmployee() metodu yazıldı
+ngOnChanges özelliği eklendi (display-employee.component.ts)
