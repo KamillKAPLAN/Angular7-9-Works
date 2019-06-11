@@ -54,3 +54,10 @@ Mülkiyet Belirleyici
   - Mülkiyet belirleyicisi, belirli bir mülke özgüdür, bu yüzden o mülkün özelliklerinde bir değişiklik yapmayız.
   - Tek bir mülkü takip etmek istediğinizde kullanışlıdır
 
+## Component Communication (Bileşen İletişimi)
+Input Property (Giriş özelliği) : Verileri PARENT'ten ÇOCUK Bileşenine aktarmak için
+  - Alt öğede, @Input dekoratörüyle bir özellik yaratıyoruz
+  - Daha sonra ana bileşen, ihtiyaç duyduğu verileri ileten alt bileşenin input özelliğine bağlanır
+
+Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktarmak için
+

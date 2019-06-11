@@ -9,22 +9,14 @@ import { EmployeeService } from './employee.service';
 export class ListEmployeesComponent implements OnInit {
 
   employees : Employee[];  
-  employeeToDisplay : Employee; 
-  private arrayIndex = 1;
+  dataFromChild: Employee;
   constructor(private _employeeService : EmployeeService) { }
 
   ngOnInit() {
     this.employees = this._employeeService.getEmployees();
-    this.employeeToDisplay = this.employees[0];
   }
 
-  nextEmployee(): void{
-    if(this.arrayIndex < this.employees.length) {
-      this.employeeToDisplay = this.employees[this.arrayIndex];
-      this.arrayIndex++;
-    } else {
-      this.employeeToDisplay = this.employees[0];
-      this.arrayIndex = 1;
-    }
+  handleNotify(eventData: Employee){
+    this.dataFromChild = eventData;
   }
 }
