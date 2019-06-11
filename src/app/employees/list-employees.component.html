@@ -1,7 +1,9 @@
-<h2 *ngIf="dataFromChild">
-  {{ dataFromChild?.name + " " + dataFromChild?.gender  }}
+<h2 #h2Variable>
 </h2>
 <div *ngFor="let employee of employees">
-  <app-display-employee [employee]="employee" (notify)="handleNotify($event)">
-  </app-display-employee>
+  <!-- <div (click)="h2Variable.innerHTML = childComponent.employee.name + ' ' + childComponent.employee.gender"> -->
+  <div (click)="h2Variable.innerHTML = childComponent.getNameAndGender()">  
+    <app-display-employee [employee]="employee" #childComponent>
+    </app-display-employee>
+  </div> 
 </div>
