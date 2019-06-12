@@ -95,4 +95,8 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
  -- Verileri filtrelemek ve sıralamak için bir IMPURE PIPE kullanılması önerilmez. Çünkü kaynak veriler değişmese bile her değişiklikte işlenir
  -- Önerilen yaklaşım filtreleme ve sıralama kodunu bileşenin kendisine taşımaktır, böylece bu kodun ne zaman çalışması ve yürütmemesi gerektiği konusunda daha iyi kontrol sahibi olursunuz.
 
+## Angular'da Sorgu string'i parametreleri
+ - Sorgu parametreleri genellikle route(rota)daki parametrelerin isteğe bağlı olmasını istediğinizde ve bu parametreleri birden fazla route(rota)da tutmak istediğinizde kullanılır.
+ - Tıpkı isteğe bağlı route(rota) parametreleri gibi, sorgu parametreleri de route(rota) yapılandırmasının bir parçası değildir ve bu nedenle route(rota) deseni eşleştirmesinde kullanılmaz
+ ## Preserve(korumak), Passing(geçen)
 
