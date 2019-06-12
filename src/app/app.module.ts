@@ -13,6 +13,7 @@ import { EmployeeService } from './employees/employee.service';
 import { DisplayEmployeeComponent } from './employees/display-employee.component';
 import { CreateEmployeeCanDeactiveGuardService } from './employees/create-employee-can-deactive-guard.service';
 import { EmployeeDetailsComponent } from './employees/employee-details.component';
+import { EmployeeFilterPiPe } from './employees/employee-filter.pipe';
 
 const appRoutes : Routes = [
   { path : 'list', component : ListEmployeesComponent },
@@ -34,6 +35,7 @@ const appRoutes : Routes = [
     ConfirmEqualValidatorDirective,
     DisplayEmployeeComponent,
     EmployeeDetailsComponent,
+    EmployeeFilterPiPe
   ],
   imports: [
     BrowserModule,

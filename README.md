@@ -77,3 +77,10 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
  - Snaphost  : rota parametresi değeri değişmezse ve yalnızca başlangıç ​​rota parametresi değerini okumak istiyorsanız
  - Obervable : rota parametresi değeri değişirse ve bu değişikliğe cevaben bazı kodları reaksiyona sokmak ve yürütmek istiyorsanız
 
+## Required(gerekli, lazım) route parameters ve Optional(isteğe bağlı) route parameter arasındaki farklar
+ - required(gerekli) route(rota) parametreleri, optional(isteğe bağlı) route(rota) parametreleri olmadığından rota yapılandırmasının bir parçasıdır.
+ - Optional(isteğe bağlı) rota parametrelerinin olmadığı desen eşleşmesinde required(gerekli) rota parametreleri kullanılır.
+ - isteğe bağlı rota parametreleri, varsa gerekli rota parametrelerinden sonra geçirilmelidir
+ - değer basit ve zorunlu olduğunda gerekli bir rota parametresini tercih edin. Örneğin, belirli bir çalışan ayrıntılarını görüntülemek için, ID parametresi zorunludur ve basit bir tam sayıdır.
+ - öte yandan, değer isteğe bağlı ve karmaşık olduğunda isteğe bağlı bir rota parametresini tercih edin
+
