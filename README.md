@@ -73,7 +73,7 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
   - korumayı açısal bağımlılık enjeksiyon sistemi ile kaydedin
   - korumayı bir rotaya bağlamak
 
-## Snapshot(Anlık Görüntü) ve Obeservable ne zaman kullanılır
+## Snapshot(Anlık Görüntü) ve Observable ne zaman kullanılır
  - Snaphost  : rota parametresi değeri değişmezse ve yalnızca başlangıç ​​rota parametresi değerini okumak istiyorsanız
  - Obervable : rota parametresi değeri değişirse ve bu değişikliğe cevaben bazı kodları reaksiyona sokmak ve yürütmek istiyorsanız
 
@@ -98,5 +98,16 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
 ## Angular'da Sorgu string'i parametreleri
  - Sorgu parametreleri genellikle route(rota)daki parametrelerin isteğe bağlı olmasını istediğinizde ve bu parametreleri birden fazla route(rota)da tutmak istediğinizde kullanılır.
  - Tıpkı isteğe bağlı route(rota) parametreleri gibi, sorgu parametreleri de route(rota) yapılandırmasının bir parçası değildir ve bu nedenle route(rota) deseni eşleştirmesinde kullanılmaz
- ## Preserve(korumak), Passing(geçen)
+ - Preserve(korumak), Passing(geçen)
+
+## Sorgu String Parametreleri Nasıl Okunur
+ - Parametrelerin 3 Tipi Vardır
+ -- 1.) Required(Gerekli) Parameters
+ -- 2.) Optional(İsteğe bağşlı) Parameters
+ -- 3.) Query(Sorgu) Parameters
+ --- has(name)    : eğer parametre bulunursa 'true', bulunmazsa 'false' değerini döndürür.
+ --- get(name)    : eğer parametre mevcut ise değeri döndürür, değillse 'null'(boş) değer döndürür.
+ --- gatAll(name) : eğer bulunursa parametre dizi string'i döndürür, bulunmazsa boş dizi döndürür.
+ --- keys         : tüm parametrelerin dizi string'ini döndürür.
+
 
