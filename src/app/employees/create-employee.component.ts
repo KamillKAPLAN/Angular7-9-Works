@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
-  @ViewChild('employeeForm', {static: true}) public createEmployeeForm: NgForm;
+  @ViewChild('employeeForm', {static: false}) public createEmployeeForm: NgForm;
   previewPhoto = false;
   datePickerConfig: Partial<BsDatepickerConfig>;
   employee: Employee = {
