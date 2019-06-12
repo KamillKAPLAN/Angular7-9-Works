@@ -91,5 +91,8 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
      - hızlıdır
      - Pipe'ın girişi bir nesne ise ve yalnızca nesnenin özellik değerleri değişse de referans olmadığında pure pipe çalıştırılmaz.
  - Impure(Saf Olmayan, Kirli) Pipe
+ -- PURE PIPE'lar hızlıdır, ancak kaynak veriler nesne referansında bir değişiklik yapılmadan güncellenirse filtreleme ve sıralama beklendiği gibi çalışmayabilir
+ -- Verileri filtrelemek ve sıralamak için bir IMPURE PIPE kullanılması önerilmez. Çünkü kaynak veriler değişmese bile her değişiklikte işlenir
+ -- Önerilen yaklaşım filtreleme ve sıralama kodunu bileşenin kendisine taşımaktır, böylece bu kodun ne zaman çalışması ve yürütmemesi gerektiği konusunda daha iyi kontrol sahibi olursunuz.
 
 

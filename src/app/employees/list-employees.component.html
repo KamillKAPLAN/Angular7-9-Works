@@ -6,7 +6,7 @@
     Change Employee Name
   </button>
 </div>
-<div *ngFor="let employee of employees | employeeFilter: searchTerm">
+<div *ngFor="let employee of employees | employeeFilter: searchTerm" (mousemove)="onMouseMove()">
   <div (click)="onClick(employee.id)" class="pointerCursor">
     <app-display-employee [employee]="employee">
     </app-display-employee>
