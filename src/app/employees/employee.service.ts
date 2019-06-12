@@ -61,4 +61,5 @@ export class EmployeeService {
     save(employee: Employee) {
         this.listEmployees.push(employee);
     }
+    countEmployee = this.listEmployees.length;
 }

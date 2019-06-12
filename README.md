@@ -73,3 +73,7 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
   - korumayı açısal bağımlılık enjeksiyon sistemi ile kaydedin
   - korumayı bir rotaya bağlamak
 
+## Snapshot(Anlık Görüntü) ve Obeservable ne zaman kullanılır
+ - Snaphost  : rota parametresi değeri değişmezse ve yalnızca başlangıç ​​rota parametresi değerini okumak istiyorsanız
+ - Obervable : rota parametresi değeri değişirse ve bu değişikliğe cevaben bazı kodları reaksiyona sokmak ve yürütmek istiyorsanız
+
