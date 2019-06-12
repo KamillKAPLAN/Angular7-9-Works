@@ -15,7 +15,7 @@ export class EmployeeFilterPiPe implements PipeTransform {
             return employees;
         }
         return employees.filter(employee =>
-            employee.name.toLowerCase().indexOf(searchTerm.toLocaleLowerCase()) !== -1    
+            employee.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1    
         );
     }
 }
