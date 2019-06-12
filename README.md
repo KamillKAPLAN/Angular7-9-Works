@@ -84,3 +84,12 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
  - değer basit ve zorunlu olduğunda gerekli bir rota parametresini tercih edin. Örneğin, belirli bir çalışan ayrıntılarını görüntülemek için, ID parametresi zorunludur ve basit bir tam sayıdır.
  - öte yandan, değer isteğe bağlı ve karmaşık olduğunda isteğe bağlı bir rota parametresini tercih edin
 
+## Pipe'ın 2 türü vardır
+ - Pure(Saf, Temiz) Pipe
+     - sadece giriş değerinde saf bir değişiklik tespit edildiğinde gerçekleştirilir
+     - saf değişiklik, ilkel bir giriş değerindeki (String, Number, Boolean) veya değiştirilen nesne referansındaki (Array, Date, Object) değişikliktir
+     - hızlıdır
+     - Pipe'ın girişi bir nesne ise ve yalnızca nesnenin özellik değerleri değişse de referans olmadığında pure pipe çalıştırılmaz.
+ - Impure(Saf Olmayan, Kirli) Pipe
+
+
