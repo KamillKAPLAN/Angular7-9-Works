@@ -61,3 +61,15 @@ Input Property (Giriş özelliği) : Verileri PARENT'ten ÇOCUK Bileşenine akta
 
 Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktarmak için
 
+## Angular Route Guards
+    Route Guard(Bekçi, Korumak)				Kullanımı
+Devre dışı bırakılabilir		: navigasyonu mevcut rotadan uzak tutun
+Aktif edilebilir			: bir rotaya nöbet navigasyonu
+Aktif çocuk olabilir			: çocuk rotasına navigasyon
+Yüklenebilir				: senkronize olmayan bir özellik modülüne navigasyon navigasyon
+Çözmek					: rota aktivasyonundan önce rota verilerini alma işlemini gerçekleştirme
+	Rota Koruması kullanmak için üç adım
+  - route guard(koruması) inşa et
+  - korumayı açısal bağımlılık enjeksiyon sistemi ile kaydedin
+  - korumayı bir rotaya bağlamak
+
