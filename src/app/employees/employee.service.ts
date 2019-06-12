@@ -54,6 +54,10 @@ export class EmployeeService {
         return this.listEmployees;
     }
 
+    getEmployee(getId: number) : Employee {
+      return this.listEmployees.find(e => e.id === getId)
+    }
+
     save(employee: Employee) {
         this.listEmployees.push(employee);
     }
