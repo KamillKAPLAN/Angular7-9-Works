@@ -32,7 +32,8 @@ const appRoutes : Routes = [
     canDeactivate : [CreateEmployeeCanDeactiveGuardService] 
   },
   { path : 'employees/:id', component : EmployeeDetailsComponent,
-    canActivate: [EmployeeDetailsGuardService] },
+    canActivate: [EmployeeDetailsGuardService] 
+  },
   { path : '', redirectTo: '/list', pathMatch: 'full' },
   { path : 'notFound', component: PageNotFoundComponent }
 ]
