@@ -45,7 +45,7 @@ export class EmployeeService {
           id : 4, 
           name : 'Kamil',
           gender : 'Male',
-          contactPreference : 'Eamil',
+          contactPreference : 'Email',
           email : 'kamilkaplnn@gmail.com',
           dateOfBirth : new Date('3/5/1994'),
           department : '5',
@@ -63,7 +63,16 @@ export class EmployeeService {
     }
 
     save(employee: Employee) {
+      if(employee.id === null) {
+        const maxid = this.listEmployees.reduce(function (e1, e2){
+          return (e1.id > e2.id) ? e1 : e2;  
+        }).id;
+        employee.id = maxid + 1;
         this.listEmployees.push(employee);
+      } else {
+        const foundIndex = this.listEmployees.findIndex(e => e.id === employee.id );
+        this.listEmployees[foundIndex] = employee;
+      }
     }
     countEmployee = this.listEmployees.length;
 }
