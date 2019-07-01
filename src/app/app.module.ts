@@ -14,7 +14,9 @@ import { DisplayEmployeeComponent } from './employees/display-employee.component
 import { CreateEmployeeCanDeactiveGuardService } from './employees/create-employee-can-deactive-guard.service';
 import { EmployeeDetailsComponent } from './employees/employee-details.component';
 import { EmployeeFilterPiPe } from './employees/employee-filter.pipe';
-import { EmployeeListResolverService } from './employees/employee-list-resolver.service'
+import { EmployeeListResolverService } from './employees/employee-list-resolver.service';
+import { PageNotFoundComponent } from './page-not-found.component'
+import { EmployeeDetailsGuardService } from './employees/employee-details-guard.service';
 
 const appRoutes : Routes = [
   { path : 'list', 
@@ -26,8 +28,10 @@ const appRoutes : Routes = [
     component : CreateEmployeeComponent,
     canDeactivate : [CreateEmployeeCanDeactiveGuardService] 
   },
-  { path : 'employees/:id', component : EmployeeDetailsComponent },
-  { path : '', redirectTo: '/list', pathMatch: 'full' }
+  { path : 'employees/:id', component : EmployeeDetailsComponent,
+    canActivate: [EmployeeDetailsGuardService] },
+  { path : '', redirectTo: '/list', pathMatch: 'full' },
+  { path : 'notFound', component: PageNotFoundComponent }
 ]
 
 @NgModule({
@@ -39,7 +43,8 @@ const appRoutes : Routes = [
     ConfirmEqualValidatorDirective,
     DisplayEmployeeComponent,
     EmployeeDetailsComponent,
-    EmployeeFilterPiPe
+    EmployeeFilterPiPe,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,7 @@ const appRoutes : Routes = [
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EmployeeService, CreateEmployeeCanDeactiveGuardService, EmployeeListResolverService],
+  providers: [EmployeeService, CreateEmployeeCanDeactiveGuardService, EmployeeListResolverService, EmployeeDetailsGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
