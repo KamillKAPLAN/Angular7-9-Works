@@ -1,8 +1,8 @@
 <div class="panel panel-primary" [class.panel-success]="selectedEmployeeId == employee.id">
-  <div class="panel-heading">
+  <div class="panel-heading pointerCursor" (click)="isHidden =! isHidden">
     <h3 class="panel-title">{{employee.name | uppercase}}</h3>
   </div>
-  <div class="panel-body">
+  <div class="panel-body" [hidden]="isHidden">
     <div class="col-xs-10">
       <div class="row vertical-align">
         <div class="col-xs-4">
@@ -75,7 +75,7 @@
       </div>
     </div>
   </div>
-  <div class="panel-footer">
+  <div class="panel-footer" [hidden]="isHidden">
     <button class="btn btn-primary" (click)="viewEmployee()">View</button>
     <button class="btn btn-primary" (click)="editEmployee()">Edit</button>
     <span *ngIf="confirmDelete">

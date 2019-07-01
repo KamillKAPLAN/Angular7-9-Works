@@ -13,3 +13,6 @@ button.btn {
 span {
     margin-left: 5px;
 }
+.pointerCursor {
+    cursor: pointer;
+}
