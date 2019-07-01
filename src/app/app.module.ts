@@ -14,9 +14,13 @@ import { DisplayEmployeeComponent } from './employees/display-employee.component
 import { CreateEmployeeCanDeactiveGuardService } from './employees/create-employee-can-deactive-guard.service';
 import { EmployeeDetailsComponent } from './employees/employee-details.component';
 import { EmployeeFilterPiPe } from './employees/employee-filter.pipe';
+import { EmployeeListResolverService } from './employees/employee-list-resolver.service'
 
 const appRoutes : Routes = [
-  { path : 'list', component : ListEmployeesComponent },
+  { path : 'list', 
+    component : ListEmployeesComponent,
+    resolve: { employeeList: EmployeeListResolverService }
+  },
   { 
     path : 'create', 
     component : CreateEmployeeComponent,
@@ -43,7 +47,7 @@ const appRoutes : Routes = [
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [EmployeeService, CreateEmployeeCanDeactiveGuardService],
+  providers: [EmployeeService, CreateEmployeeCanDeactiveGuardService, EmployeeListResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
