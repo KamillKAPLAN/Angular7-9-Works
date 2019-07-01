@@ -75,6 +75,8 @@ export class EmployeeService {
       }
     }
 
+    countEmployee = this.listEmployees.length;
+    
     deleteEmployee(id: number) {
       const i = this.listEmployees.findIndex(e => e.id === id);
       if(i !== -1) {
