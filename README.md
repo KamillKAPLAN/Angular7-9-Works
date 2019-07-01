@@ -102,12 +102,13 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
 
 ## Sorgu String Parametreleri Nasıl Okunur
  - Parametrelerin 3 Tipi Vardır
- -- 1.) Required(Gerekli) Parameters
- -- 2.) Optional(İsteğe bağşlı) Parameters
- -- 3.) Query(Sorgu) Parameters
- --- has(name)    : eğer parametre bulunursa 'true', bulunmazsa 'false' değerini döndürür.
- --- get(name)    : eğer parametre mevcut ise değeri döndürür, değillse 'null'(boş) değer döndürür.
- --- gatAll(name) : eğer bulunursa parametre dizi string'i döndürür, bulunmazsa boş dizi döndürür.
- --- keys         : tüm parametrelerin dizi string'ini döndürür.
+     - Required(Gerekli) Parameters
+     - Optional(İsteğe bağşlı) Parameters
+     - Query(Sorgu) Parameters
+
+     - has(name)    : eğer parametre bulunursa 'true', bulunmazsa 'false' değerini döndürür.
+     - get(name)    : eğer parametre mevcut ise değeri döndürür, değillse 'null'(boş) değer döndürür.
+     - getAll(name) : eğer bulunursa parametre dizi string'i döndürür, bulunmazsa boş dizi döndürür.
+     - keys         : tüm parametrelerin dizi string'ini döndürür.
 
 
