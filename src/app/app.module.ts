@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { SelectRequiredValidatorDirective } from './shared/select-required-validator.directive';
 
@@ -50,7 +52,8 @@ const appRoutes : Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule,  
+    HttpClientModule,
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
