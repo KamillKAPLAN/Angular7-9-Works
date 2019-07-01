@@ -1,14 +1,7 @@
 <div class="form-group">
   <input type="text" class="form-control" placeholder="Search By Name" [(ngModel)]="searchTerm">
 </div>
-<div class="form-group">
-  <button class="btn btn-primary" (click)="changeEmployeeName()">
-    Change Employee Name
-  </button>
-</div>
-<div *ngFor="let employee of filteredEmployees" (mousemove)="onMouseMove()">
-  <div (click)="onClick(employee.id)" class="pointerCursor">
-    <app-display-employee [employee]="employee">
-    </app-display-employee>
-  </div>
+<div *ngFor="let employee of filteredEmployees">
+  <app-display-employee [employee]="employee" [searchTerm]="searchTerm">
+  </app-display-employee>
 </div>

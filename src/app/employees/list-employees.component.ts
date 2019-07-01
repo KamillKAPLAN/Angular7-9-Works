@@ -8,11 +8,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ListEmployeesComponent implements OnInit {
 
-  employees : Employee[]; 
-  filteredEmployees : Employee[];  
+  employees: Employee[];
+  filteredEmployees: Employee[];
 
   private _searchTerm: string;
-  get searchTerm(): string{
+  get searchTerm(): string {
     return this._searchTerm;
   }
   set searchTerm(value: string) {
@@ -22,19 +22,18 @@ export class ListEmployeesComponent implements OnInit {
 
   filtereEmployees(searchString: string) {
     return this.employees.filter(employee =>
-      employee.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1    
+      employee.name.toLowerCase().indexOf(searchString.toLowerCase()) !== -1
     );
   }
 
-  constructor(private _router: Router,
-              private _route: ActivatedRoute) { 
-                this.employees = this._route.snapshot.data['employeeList'];
-                if (this._route.snapshot.queryParamMap.has('searchTerm')) {
-                  this.searchTerm = this._route.snapshot.queryParamMap.get('searchTerm');
-                } else {
-                  this.filteredEmployees = this.employees;        
-                }
-              }
+  constructor(private _router: Router, private _route: ActivatedRoute) {
+    this.employees = this._route.snapshot.data['employeeList'];
+    if (this._route.snapshot.queryParamMap.has('searchTerm')) {
+      this.searchTerm = this._route.snapshot.queryParamMap.get('searchTerm');
+    } else {
+      this.filteredEmployees = this.employees;
+    }
+  }
 
   ngOnInit() {
     // console.log(this._route.snapshot.queryParamMap.has('searchTerm'));
@@ -42,23 +41,5 @@ export class ListEmployeesComponent implements OnInit {
     // console.log(this._route.snapshot.queryParamMap.getAll('searchTerm'));
     // console.log(this._route.snapshot.queryParamMap.keys);
     // console.log(this._route.snapshot.paramMap.keys);
-  }
-
-  onClick(employeeId: number) {
-    this._router.navigate(['/employees', employeeId],{
-      queryParams : { 'searchTerm' : this._searchTerm, 'testParam' : 'testValue'}
-    });
-  }
-
-  changeEmployeeName() {
-    this.employees[0].name = 'Merhaba B1 Company';
-    this.filteredEmployees = this.filtereEmployees(this.searchTerm);
-    // const newEmployeeArray: Employee[] = Object.assign([],this.employees);
-    // newEmployeeArray[0].name = 'Merhaba B1 Company';
-    // this.employees = newEmployeeArray;
-  }
-
-  onMouseMove() {
-
   }
 }
