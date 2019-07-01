@@ -78,6 +78,12 @@
   <div class="panel-footer">
     <button class="btn btn-primary" (click)="viewEmployee()">View</button>
     <button class="btn btn-primary" (click)="editEmployee()">Edit</button>
-    <button class="btn btn-danger">Delete</button>
+    <span *ngIf="confirmDelete">
+      <span>Are you sure you want to Delete?</span>
+      <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>
+      <button class="btn btn-primary" (click)="confirmDelete=false">No</button>
+    </span>
+    <button *ngIf="!confirmDelete" class="btn btn-danger" 
+      (click)="confirmDelete=true">Delete</button>
   </div>
 </div>  
