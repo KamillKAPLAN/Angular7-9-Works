@@ -3,8 +3,7 @@ import { Employee } from '../models/employee.model';
 import { Observable } from 'rxjs/Observable';
 import { EmployeeService } from './employee.service';
 import { Injectable } from '@angular/core';
-import { map, catchError } from 'rxjs/operators';
-import { ResolvedEmployeeList } from './resolved-employeelist.model';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class EmployeeListResolverService implements Resolve<Employee[] | string> {

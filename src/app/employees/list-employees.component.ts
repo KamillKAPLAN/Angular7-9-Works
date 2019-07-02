@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../models/employee.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ResolvedEmployeeList } from './resolved-employeelist.model';
 
 @Component({
   templateUrl: './list-employees.component.html',

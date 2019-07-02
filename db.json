@@ -1,48 +1,62 @@
 {
   "employees": [
     {
-      "id" : 1, 
-      "name" : "Mark",
-      "gender" : "Male",
-      "contactPreference" : "Email",
-      "email" : "mark@pragimtech.com",
-      "dateOfBirth" : "10/25/1988",
-      "department" : "3",
-      "isActive" :true,
-      "photoPath" : "assets/images/img1.png"
+      "id": 1,
+      "name": "Mark",
+      "gender": "Male",
+      "contactPreference": "Email",
+      "email": "mark@pragimtech.com",
+      "dateOfBirth": "10/25/1988",
+      "department": "3",
+      "isActive": true,
+      "photoPath": "assets/images/img1.png"
     },
     {
-      "id" : 2, 
-      "name" : "Mary",
-      "gender" : "Female",
-      "contactPreference" : "Phone",
-      "phoneNumber" : 2345978640,
-      "dateOfBirth" : "11/20/1979",
-      "department" : "2",
-      "isActive" :true,
-      "photoPath" : "assets/images/img2.png"
+      "id": 2,
+      "name": "Mary",
+      "gender": "Female",
+      "contactPreference": "Phone",
+      "phoneNumber": 2345978640,
+      "dateOfBirth": "11/20/1979",
+      "department": "2",
+      "isActive": true,
+      "photoPath": "assets/images/img2.png"
     },
     {
-      "id" : 3, 
-      "name" : "John",
-      "gender" : "Male",
-      "contactPreference" : "Phone",
-      "phoneNumber" : 5432978640,
-      "dateOfBirth" : "3/25/1976",
-      "department" : "1",
-      "isActive" :true,
-      "photoPath" : "assets/images/img3.png"
+      "id": 3,
+      "name": "John",
+      "gender": "Male",
+      "contactPreference": "Phone",
+      "phoneNumber": 5432978640,
+      "dateOfBirth": "3/25/1976",
+      "department": "1",
+      "isActive": true,
+      "photoPath": "assets/images/img3.png"
     },
     {
-      "id" : 4, 
-      "name" : "Kamil",
-      "gender" : "Male",
-      "contactPreference" : "Email",
-      "email" : "kamilkaplnn@gmail.com",
-      "dateOfBirth" : "3/5/1994",
-      "department" : "5",
-      "isActive" :true,
-      "photoPath" : "assets/images/img4.png"
+      "id": 4,
+      "name": "Kamil",
+      "gender": "Male",
+      "contactPreference": "Email",
+      "email": "kamilkaplnn@gmail.com",
+      "dateOfBirth": "3/5/1994",
+      "department": "5",
+      "isActive": true,
+      "photoPath": "assets/images/img4.png"
+    },
+    {
+      "id": 5,
+      "name": "deneme",
+      "gender": "Male",
+      "contactPreference": "Phone",
+      "phoneNumber": "000000000000000",
+      "email": "kamil_kaplan@ymail.com",
+      "dateOfBirth": "2019-06-30T21:00:00.000Z",
+      "department": "4",
+      "isActive": true,
+      "photoPath": "assets/images/img3.png",
+      "password": "a",
+      "confirmPassword": "a"
     }
   ]
 }
