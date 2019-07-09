@@ -111,4 +111,45 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
      - getAll(name) : eğer bulunursa parametre dizi string'i döndürür, bulunmazsa boş dizi döndürür.
      - keys         : tüm parametrelerin dizi string'ini döndürür.
 
+## PROJE BİTTİ
+ - Sırada GOLANG var. Angular ile yazılan frontend tarası ile Golang ile yazılacak backend birleştirilecek.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
