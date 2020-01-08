@@ -21,6 +21,34 @@
       "department": "1",
       "isActive": true,
       "photoPath": "assets/images/img3.png"
+    },
+    {
+      "id": 4,
+      "name": "KAMİL KAPLAN",
+      "gender": "Male",
+      "contactPreference": "Email",
+      "phoneNumber": "05465823374",
+      "email": "kamilkaplnn@gmail.com",
+      "dateOfBirth": "2020-01-15T08:16:53.000Z",
+      "department": "3",
+      "isActive": true,
+      "photoPath": "https://miro.medium.com/fit/c/256/256/1*lFE5xzkA7iVz9lcvW1eC7Q.jpeg",
+      "password": "452",
+      "confirmPassword": "452"
+    },
+    {
+      "id": 5,
+      "name": "BURAK ALAKUŞ",
+      "gender": "Male",
+      "contactPreference": "Email",
+      "phoneNumber": " 90-424-2370000",
+      "email": "burak.alakuss@gmail.com",
+      "dateOfBirth": "2020-01-01T08:16:53.000Z",
+      "department": "1",
+      "isActive": true,
+      "photoPath": "http://yaz.tek.firat.edu.tr/sites/yaz.tek.firat.edu.tr/files/burak.jpg",
+      "password": "1",
+      "confirmPassword": "1"
     }
   ]
 }

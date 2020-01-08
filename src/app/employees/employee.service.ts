@@ -12,7 +12,7 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 @Injectable()
 export class EmployeeService {
   constructor(private httpClient: HttpClient) { }
-  
+  countEmployee = Employee.length;
   baseUrl = 'http://localhost:3000/employees';
 
   getEmployees(): Observable<Employee[]> {
@@ -27,7 +27,7 @@ export class EmployeeService {
     } else {
       console.log('Server Side Error: ', errorResponse);
     }
-    return new ErrorObservable('There is a problem with the service. We are notified & working on it. Please try again later.');
+    return new ErrorObservable(`There is a problem with the service. We are notified & working on it. Please try again later.`);
   }
 
   getEmployee(getId: number): Observable<Employee> {

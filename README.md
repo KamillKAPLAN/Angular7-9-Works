@@ -115,6 +115,10 @@ Output Property (Çıktı özelliği) : ÇOCUK'tan PARENT Bileşenine veri aktar
  - Sırada GOLANG var. Angular ile yazılan frontend tarası ile Golang ile yazılacak backend birleştirilecek.
 
 
+## PROJEYİ ÇALIŞIRMAK
+ - Öncelikle terminal'i açıyoruz. 'json-server --watch db.json' komutunuçalıştırıyoruz. Bu bizim db.json yani veriTabenımızı aktif edre.
+ - 'ng --serve --open' komutunu çalıştırıyoruz.Projemizin çalışmasını sağlamaktadır.
+
 
 
 
