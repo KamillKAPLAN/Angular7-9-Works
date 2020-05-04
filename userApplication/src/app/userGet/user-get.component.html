@@ -1,0 +1,181 @@
+<div *ngIf="users">
+  <br>
+  <div class="row">
+    <div class="col-sm-1">
+      <label>Search Person: </label>
+    </div>
+    <div class="col-sm-11">
+      <input type="text"
+             class="form-control col-sm-8"
+             id="usr"
+             placeholder="Search Person:"
+             [(ngModel)]="searchUser">
+    </div>
+  </div>
+
+  <br>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Age</th>
+      <th>Company</th>
+      <th>Active</th>
+      <th>Address</th>
+      <th>Details</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </tr>
+    </thead>
+    <tbody>-
+    <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: pageActual } | userFilter:searchUser">
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.age}}</td>
+      <td>{{user.company}}</td>
+      <td>{{user.active}}</td>
+      <td>{{user.address}}</td>
+      <td>
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#my_modal_details"
+                routerLink="/userGet/{{user.id}}">
+          <!-- [routerLink]="['/userGetById/' + user.id]" -->
+          DETAILS
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-info" routerLink="/userPut">
+          EDIT
+        </button>
+      </td>
+      <td>
+        <button type="button" data-toggle="modal" data-target="#my_modal_delete"
+                class="btn btn-danger">
+          DELETE
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="my_modal_delete" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                  <span><b>{{user.first_name}}</b> kullanıcısını silmek istediğinden emin misin?</span>
+                </h4>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-danger" (click)="deleteUser(user.id)" data-dismiss="modal">Evet</button>
+                <button class="btn btn-primary" (click)="confirmDelete=false" data-dismiss="modal">Hayır</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="pageActual = $event" style="text-align:center"></pagination-controls>
+</div>
+
+<div *ngIf="!users">
+  <!-- Modal -->
+  <div class="modal" id="my_modal_details" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">
+                  User Name: {{user.first_name}}
+                </h3>
+              </div>
+              <div class="panel-body">
+                <div class="col-xs-10">
+                  <div class="row vertical-align">
+                    <div class="col-xs-4">
+                      <img class="imageClass" src="http://www.sclance.com/pngs/user-png/user_png_1449736.png"
+                           style="width: 150px; height: 150px"/>
+                    </div>
+                    <div class="col-xs-8">
+                      <div class="row">
+                        <div class="col-xs-6">
+                          First Name
+                        </div>
+                        <div class="col-xs-6">
+                          : {{user.first_name}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          Last Name
+                        </div>
+                        <div class="col-xs-6">
+                          : {{user.last_name}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          Email
+                        </div>
+                        <div class="col-xs-6">
+                          : {{user.email}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          Phone
+                        </div>
+                        <div class="col-xs-6">
+                          : {{user.phone}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          Age
+                        </div>
+                        <div class="col-xs-6">
+                          : {{user.age}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          Company
+                        </div>
+                        <div class="col-xs-6">
+                          : {{user.company}}
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-xs-6">
+                          Address
+                        </div>
+                        <div class="col-xs-6">
+                          : {{user.address}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <a class="btn btn-primary" routerLink="/userGet"
+                   queryParamsHandling="preserve">Back to Users</a>
+                <!--    <button class="btn btn-primary pull-right" (click)="viewNextUser(user.id)">
+                      View Next User
+                    </button>-->
+              </div>
+            </div>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

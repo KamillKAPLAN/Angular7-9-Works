@@ -1,0 +1,12 @@
+<div class="topnav" *ngIf="isAuthenticated">
+  <a routerLink="/userLogin" routerLinkActive="active">Login</a>
+  <a routerLink="/userPost" routerLinkActive="active">Register</a>
+</div>
+<div class="topnav" *ngIf="!isAuthenticated">
+  <a (click)="userLogout()" routerLinkActive="active">Logout</a>
+  <a routerLink="/userPost" routerLinkActive="active">Add User</a>
+  <a routerLink="/userGet" routerLinkActive="active">List User</a>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

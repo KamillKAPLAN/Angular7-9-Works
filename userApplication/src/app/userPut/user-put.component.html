@@ -1,0 +1,28 @@
+<h1>Update User</h1>
+<hr>
+<div *ngFor="let user of users">
+  <label><b>FirstName</b></label>
+  <input type="text" placeholder="Enter FirstName" name="firstName" [(ngModel)]="user.first_name" required>
+
+  <label><b>LastName</b></label>
+  <input type="text" placeholder="Enter LastName" name="lastName" [(ngModel)]="user.last_name" required>
+
+  <label><b>Email</b></label>
+  <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="user.email" required>
+
+  <label><b>Phone</b></label>
+  <input type="text" placeholder="Enter Phone" name="phone" [(ngModel)]="user.phone" required>
+
+  <label><b>Age</b></label>
+  <input type="text" placeholder="Enter Age" name="age" [(ngModel)]="user.age" required>
+
+  <label><b>Company</b></label>
+  <input type="text" placeholder="Enter Company" name="company" [(ngModel)]="user.company" required>
+
+  <label><b>Address</b></label>
+  <input type="text" placeholder="Enter Address" name="address" [(ngModel)]="user.address" required>
+</div>
+<hr>
+
+<button class="registerbtn" (click)="updateUser()">Update User</button>
+

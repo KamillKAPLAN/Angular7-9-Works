@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Login</h1>
+  <hr>
+
+  <label><b>Email</b></label>
+  <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="user.email" required>
+
+  <label><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="user.password" required>
+
+  <hr>
+
+  <button class="registerbtn" (click)="login()">Login</button>
+
+
+</div>
