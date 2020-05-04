@@ -1,0 +1,38 @@
+<ul *ngIf="cartItems.length>0;else cartEmptyContent" class="navbar-nav mr-auto border-left border-right">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+      <!-- Pipe kullanıldı -->
+      <i class="fa fa-shopping-cart"></i>
+      {{totalCartItemPrice | currency:"₺":true}} ({{totalCartItem}})
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a *ngFor="let item of cartItems" class="dropdown-item border-left border-danger">
+          <i class="btn btn-xs btn-danger fa fa-remove" (click)="remoceFromCart(item.product)"></i>
+          {{item.product.productName | uppercase}} ({{item.quantity}})
+        </a>
+      </li>
+      <li class="dropdown-divider"></li>
+      <li class="text-center">
+        <strong>
+          <a class="dropdown-item" routerLink="myCart">Sepete Git...</a>
+        </strong>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<ng-template #cartEmptyContent>
+  <ul class="navbar-nav mr-auto border-left border-right">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+         aria-haspopup="true" aria-expanded="false">
+        <!-- Pipe kullanıldı -->
+        <i class="fa fa-shopping-cart"></i>
+        Sepet boş..
+      </a>
+    </li>
+  </ul>
+</ng-template>
+

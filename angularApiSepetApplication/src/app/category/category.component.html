@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <br>
+  <h4 class="page-header">Kategoriler</h4>
+  <hr>
+  <div class="list-group">
+    <a class="list-group-item"
+       routerLinkActive="active"
+       (click)="onSelect()"
+       [routerLinkActiveOptions]="{exact:true}"
+       routerLink="products"
+       style="text-align: center">Tüm Ürünler
+    </a>
+    <a class="list-group-item"
+       routerLinkActive="active"
+       *ngFor="let category of categories"
+       routerLink="products/{{category.seoUrl}}"
+       (click)="onSelect(category)">
+      {{ category.categoryName }}
+    </a>
+  </div>
+</div>

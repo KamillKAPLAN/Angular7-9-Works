@@ -1,0 +1,35 @@
+<br>
+<h4 class="page-header">Sepetim</h4>
+<hr>
+<table class="table table-responsive" *ngIf="cartItems.length > 0; else cartEmptyContent">
+  <thead>
+  <tr>
+    <th>Ürün Adı</th>
+    <th>Açıklama</th>
+    <th>Birim Fiyatı</th>
+    <th>Ürün Adedi</th>
+    <th>Toplam</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cartItem of cartItems">
+    <td>{{cartItem.product.productName}}</td>
+    <td>{{cartItem.product.quantityPerUnit}}</td>
+    <td>{{cartItem.product.unitPrice | currency: "₺"}}</td>
+    <td>{{cartItem.quantity}}</td>
+    <td>{{cartItem.quantity * cartItem.product.unitPrice | currency: "₺"}}</td>
+    <td>
+      <button class="btn btn-danger btn-xs" (click)="removeFromCart(cartItem.product)">
+        sepetten sil
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #cartEmptyContent>
+  <div class="alert alert-info">
+    Sepetiniz boş...
+  </div>
+</ng-template>

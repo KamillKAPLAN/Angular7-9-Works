@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <br>
+  <h4 class="page-header">Ürünler</h4>
+  <hr>
+  <div *ngIf="filterText">
+    Aranan kelime : <strong> {{ filterText }} </strong>
+  </div>
+  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="filterText">
+  <div>
+    <ul class="list-group">
+      <li
+        *ngFor="let product of products | productFilter:filterText | slice:(pager.currentPage-1)*pager.pageSize:((pager.currentPage-1)*pager.pageSize)+pager.pageSize"
+        class="list-group-item">
+        <button (click)="addToCart(product)" class="btn btn-xs btn-primary pull-right">
+          <i class="fa fa-cart-plus"></i>
+          sepete ekle
+        </button>
+        <h5><strong>{{product.productName | uppercase}}</strong></h5>
+        <p>{{product.quantityPerUnit}}</p>
+        <h6>{{product.unitPrice | currency:"₺"}} ( {{product.unitPrice  | vatAdded:10:"KDV Dahil"}} )</h6>
+      </li>
+    </ul>
+  </div>
+</div>
+<br>
+<nav aria-label="Page Navigation">
+  <ul class="pagination justify-content-center">
+    <li
+      class="page-item"
+      *ngFor="let page of pager.pageList"
+      [class.active]="page === pager.currentPage">
+      <a
+        style="cursor: pointer;"
+        class="page-link"
+        (click)="setPage(page)">
+        {{page}}
+      </a>
+    </li>
+  </ul>
+</nav>
