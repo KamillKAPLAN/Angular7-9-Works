@@ -1,0 +1,21 @@
+<h2>İŞÇİ EKLE</h2>
+<hr>
+<form id="filter" (ngSubmit)="addEmployee()">
+    <div class="form-group">
+        <label>İşçi Adı : </label>
+        <input type="text" name="eName" [(ngModel)]="employe.employee_name"
+               class="form-control " aria-describedby="emailHelp" placeholder="İşçi adını giriniz...">
+    </div>
+    <div class="form-group">
+        <label>İşçi Maaşı : </label>
+        <input type="text" name="eSalary" [(ngModel)]="employe.employee_salary"
+               class="form-control" placeholder="İşçi maaşını giriniz...">
+    </div>
+    <div class="form-group">
+        <label>İşçi Yaşı : </label>
+        <input type="text" name="eAge" [(ngModel)]="employe.employee_age"
+               class="form-control" placeholder="İşçi yaşını giriniz...">
+    </div>
+    <button type="submit" style="margin-top: 10px" class="form-control btn btn-primary">İşçi Ekle
+    </button>
+</form>

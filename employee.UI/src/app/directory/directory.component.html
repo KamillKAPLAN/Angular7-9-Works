@@ -1,0 +1,26 @@
+<h2>İŞÇİ LİSTESİ</h2>
+<hr>
+<form id="filter">
+    <label>İşçileri isimlere göre filtrele :</label>
+    <input type="text" name="filtre" class="form-control" [(ngModel)]="term"/>
+</form>
+<hr>
+<table id="customers">
+    <tr>
+        <th>İşci Id</th>
+        <th>İşçi Adı</th>
+        <th>İşçi Ücreti</th>
+        <th>İşçi Yaşı</th>
+        <th></th>
+
+    </tr>
+    <tr *ngFor="let lst of employees | filter: term">
+        <td>{{lst.id}}</td>
+        <td>{{lst.employee_name}}</td>
+        <td>{{lst.employee_salary}}</td>
+        <td>{{lst.employee_age}}</td>
+        <td>
+            <button type="button" class="btn btn-info">GNCL</button>
+        </td>
+    </tr>
+</table>
