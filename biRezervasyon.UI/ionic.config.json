@@ -1,0 +1,7 @@
+{
+  "name": "biRezervasyon",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,58 @@
+<ion-content>
+    <ion-slides #slides>
+        <ion-slide style="height: -webkit-fill-available;">
+            <div class="diag" style="background: url('../../assets/img/landing/landing1.png') no-repeat">
+            </div>
+            <ion-img src="../../assets/img/next-page.png" class="skip" (click)="next()"></ion-img>
+        </ion-slide>
+
+        <ion-slide style="height: -webkit-fill-available;">
+            <div class="diag" style="background: url('../../assets/img/landing/landing2.png') no-repeat">
+            </div>
+            <ion-img src="../../assets/img/next-page.png" class="skip" (click)="next()"></ion-img>
+        </ion-slide>
+
+        <ion-slide style="height: -webkit-fill-available;">
+            <div class="diag" style="background: url('../../assets/img/landing/landing3.png') no-repeat">
+            </div>
+
+            <ion-img src="../../assets/img/next-page.png" class="skip" (click)="next()"></ion-img>
+        </ion-slide>
+
+        <ion-slide style="height: -webkit-fill-available;">
+            <div class="diag" style="background: url('../../assets/img/landing/landing4.png') no-repeat">
+            </div>
+
+            <ion-button block (click)="finish()" class="skip" style="width: 97%">{{ nextMsg }}</ion-button>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
+
+<!--
+
+<ion-content style="height: -webkit-fill-available;" *ngIf="page=='page1'">
+    <div class="diag" style="background: url('../../assets/img/landing/landing1.png') no-repeat">
+    </div>
+    <ion-img src="../../assets/img/next-page.png" class="skip" (click)="page='page2'" style=" width: 13%; height: 6%;"></ion-img>
+</ion-content>
+
+
+<ion-content style="height: -webkit-fill-available;" *ngIf="page=='page2'">
+    <div class="diag" style="background: url('../../assets/img/landing/landing2.png') no-repeat">
+    </div>
+    <ion-img src="../../assets/img/next-page.png" class="skip" (click)="page='page3'" style=" width: 13%; height: 6%;"></ion-img>
+</ion-content>
+
+<ion-content style="height: -webkit-fill-available;" *ngIf="page=='page3'">
+    <div class="diag" style="background: url('../../assets/img/landing/landing3.png') no-repeat">
+    </div>
+
+    <ion-img src="../../assets/img/next-page.png" class="skip" (click)="page='page4'" style=" width: 13%; height: 6%;"></ion-img>
+</ion-content>
+
+<ion-content style="height: -webkit-fill-available;" *ngIf="page=='page4'">
+    <div class="diag" style="background: url('../../assets/img/landing/landing4.png') no-repeat">
+    </div>
+    <ion-button block (click)="finish()" class="skip" style="width: 97%">{{ nextMsg }}</ion-button>
+</ion-content>
+-->
